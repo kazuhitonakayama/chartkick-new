@@ -1,10 +1,7 @@
 <h1>Posts#index</h1>
-<h2><%= link_to "New Post", new_post_path %></h2>
-<% @posts.each do |p| %>
-    <div class="post-content">
-        <%= p.body %>
-        <%= p.time %>
-        <%= p.tag %>
-        <%= p.detail %>
-    </div>
+<h2><%= link_to "新しいタグを作る", new_tag_path %></h2>
+<h2><%= link_to "新しい投稿", new_post_path %></h2>
+<h1>タグ一覧</h1>
+<% @tags.each do |t| %>
+    <p><%= t.tagname %></p>
 <% end %>

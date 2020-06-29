@@ -4,7 +4,6 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :body
       t.integer :time
       t.text :detail
-      t.string :tag
 
       t.timestamps
     end

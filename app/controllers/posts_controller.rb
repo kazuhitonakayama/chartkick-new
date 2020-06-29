@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts=Post.all
+    @tags=Tag.all
   end
 
   def new
@@ -22,6 +23,6 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:body,:tag,:detail,:time)
+      params.require(:post).permit(:body,:detail,:time,:tag_id)
     end
 end

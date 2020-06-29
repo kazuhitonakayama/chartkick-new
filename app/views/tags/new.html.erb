@@ -1,0 +1,5 @@
+<%= form_with model: @tag, url: { action: :create }, class: "new_tag", local: true do |f| %>
+    <%= f.label :tagname %>
+    <%= f.text_field :tagname, placeholder: "タグの名前" %>
+    <div class="text-center"><%= f.submit "作成", class: "submitBtn" %></div>
+<% end %>
