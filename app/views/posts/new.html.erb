@@ -1,22 +1,32 @@
 <%= form_with(model: @post, local: true) do |form| %>
 
-  <div class="field">
+    <div class="field">
     <%= form.label :body %>
     <%= form.text_area :body %>
-  </div>
+    </div>
 
-  <div class="field">
+    <div class="field">
     <%= form.label :detail %>
     <%= form.text_area :detail %>
-  </div>
+    </div>
 
-  <div class="field">
+    <div class="field">
     <%= form.label :time %>
     <%= form.number_field :time %>
-  </div>
+    </div>
 
-  <div class="actions">
+    <div class="field">
+        <%= form.label :tag, 'タグの種類' %>
+        <%= form.collection_check_boxes(:tag_ids, Tag.all, :id, :tagname) do |tag| %> 
+            <%= tag.label do %>
+                <%= tag.check_box %>
+                <%= tag.text %>
+            <% end %>
+        <% end %>
+    </div>
+
+    <div class="actions">
     <%= form.submit %>
-  </div>
+    </div>
 <% end %>
 

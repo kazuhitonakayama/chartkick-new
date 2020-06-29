@@ -1,0 +1,2 @@
+class PostTagRelationsController < ApplicationController
+end
