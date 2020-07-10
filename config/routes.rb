@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments/index'
+  get 'comments/new'
   root "posts#index"
   resources :tags , only: [:new,:create]
   resources :posts

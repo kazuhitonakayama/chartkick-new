@@ -18,6 +18,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(post_params)
+      redirect_to :root
+    else
+      render action: :edit
+    end
+  end
+
   def show
     @post = Post.find(params[:id])
   end
