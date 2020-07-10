@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
   def index
-    @posts=Post.all
-    @tags=Tag.all
+    @posts = Post.all
+    @tags = Tag.all
   end
 
   def new
-    @post=Post.new
+    @post = Post.new
   end
 
   def create
@@ -19,6 +19,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   private

@@ -1,2 +1,10 @@
 <h1>Posts#show</h1>
 <p>Find me in app/views/posts/show.html.erb</p>
+<p><%= @post.body %></p>
+<p><%= @post.detail %></p>
+<p><%= @post.time %></p>
+<div>
+    <% @post.tags.each do |tag| %>
+        <%= tag.tagname %>
+    <% end %>
+</div>
