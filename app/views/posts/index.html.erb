@@ -6,6 +6,8 @@
     <div class="post-content">
         <p><%= p.body %></p>
         <p><%= p.detail %></p>
+        <%# p.time=p.time + p.comments.sum(:time) %>
+        <%# p.time.save %>
         <p><%= p.time %></p>
         <% p.tags.each do |tag| %>
             <%= tag.tagname %>

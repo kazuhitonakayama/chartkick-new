@@ -8,13 +8,18 @@
         <%= tag.tagname %>
     <% end %>
 </div>
-<%= form_with(model: @post, local: true) do |form| %>
-    <div class="field">
-        <%= form.label :time %>
-        <%= @post.time %>
-        <%= form.number_field :time %>
+<h1>コメント一覧</h1>
+<% @comments.each do |c| %>
+    <div class="each-comment">
+        <%= c.detail %>
+        <%= c.time %>
     </div>
-    <div class="actions">
-        <%= form.submit %>
-    </div>
+<% end %>
+<h1>コメント投稿</h1>
+<%= form_with(model: [@post, @comment], local: true) do |f| %>
+    <%= f.text_area :detail %>
+    <%= f.number_field :time %>
+    <%= button_tag type: "submit" do %>
+        <i class="far fa-comments"></i> コメントする
+    <% end %>
 <% end %>

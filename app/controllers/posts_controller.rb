@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    # @updateposts.update(post)
+    # @posts.save
     @tags = Tag.all
   end
 
@@ -29,6 +31,10 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    # @post.time = @post.time + @post.comments.sum(:time)
+    # @post.save
+    @comments = @post.comments
+    @comment = @post.comments.build
   end
 
   private
