@@ -11,11 +11,6 @@
     </div>
 
     <div class="field">
-    <%= form.label :time %>
-    <%= form.number_field :time %>
-    </div>
-
-    <div class="field">
         <%= form.label :tag, 'タグの種類' %>
         <%= form.collection_check_boxes(:tag_ids, Tag.all, :id, :tagname) do |tag| %> 
             <%= tag.label do %>
