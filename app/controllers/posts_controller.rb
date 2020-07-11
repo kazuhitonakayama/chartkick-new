@@ -29,6 +29,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      redirect_to :root
+    else
+      render action: :new
+    end
+
+  end
+
   def show
     @post = Post.find(params[:id])
     # @post.time = @post.time + @post.comments.sum(:time)
