@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_10_160704) do
+ActiveRecord::Schema.define(version: 2020_07_11_032711) do
 
   create_table "comments", force: :cascade do |t|
     t.text "detail"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2020_07_10_160704) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "post_id"
+    t.string "body"
+    t.integer "sum"
   end
 
   create_table "post_tag_relations", force: :cascade do |t|
@@ -34,7 +36,6 @@ ActiveRecord::Schema.define(version: 2020_07_10_160704) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "tag_id"
-    t.integer "sumtime"
   end
 
   create_table "tags", force: :cascade do |t|

@@ -16,4 +16,4 @@
     </div>
 <% end %>
 
-<%= column_chart Post.pluck(:body, :time) %>
+<%= column_chart Comment.pluck(:body, :sum) %>
