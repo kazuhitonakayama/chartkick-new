@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# deviseの導入
 
-Things you may want to cover:
+# PostモデルとUserモデルの紐付け
+## user_idカラムを追加し、投稿の際にcurrent_user.idが打ち込まれるように
 
-* Ruby version
+# CommentモデルとUserモデルの紐付け
+## user_idカラムを追加し、投稿の際にcurrent_user.idが打ち込まれるように
 
-* System dependencies
+<!-- def index
+    @posts = Post.where(user_id: current_user).all
+    # @updateposts.update(post)
+    # @posts.save
+    @tags = Tag.all
+end -->
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# <%= column_chart Comment.where(user_id: current_user).pluck(:body, :sum) %>

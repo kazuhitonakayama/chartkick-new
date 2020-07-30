@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.where(user_id: current_user).all
     # @updateposts.update(post)
     # @posts.save
     @tags = Tag.all
@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
     if @post.save
       flash[:notice] = "投稿しました"
       redirect_to :root

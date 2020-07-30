@@ -1,6 +1,7 @@
 <h1>Posts#index</h1>
 <h2><%= link_to "新しいタグを作る", new_tag_path %></h2>
 <h2><%= link_to "新しい投稿", new_post_path %></h2>
+<h2><%= link_to "ログアウト", destroy_user_session_path,method: :delete %></h2>
 <h1>タグ一覧</h1>
 <% @posts.each do |p| %>
     <div class="post-content">
@@ -16,4 +17,4 @@
     </div>
 <% end %>
 
-<%= column_chart Comment.pluck(:body, :sum) %>
+<%= column_chart Comment.where(user_id: current_user).pluck(:body, :sum) %>

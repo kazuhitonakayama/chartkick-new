@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     post = Post.find(params[:post_id])
     @comment = post.comments.build(comment_params)
     @comment.body = post.body
+    @comment.user_id = current_user.id
     @comment.sum = @comment.time + post.comments.sum(:time)
     # post.time=post.time + @comment.time
     if @comment.save
